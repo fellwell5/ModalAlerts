@@ -17,7 +17,7 @@ var ModalA = class ModalAlerts {
   static isHTML(string) {
     return /^<.*?>$/.test(string) && !!$(string)[0];
   }
-  static newModal(title, text, callback){
+  static newModal(title, text, callback = null){
     var id = this.idGenerator();
     if(!this.isHTML(text)){ text = "<p>"+text+"</p>"; }
     let template = '<div id="'+id+'" class="modal" tabindex="-1" role="dialog">'+
